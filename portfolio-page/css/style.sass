@@ -1,0 +1,453 @@
+// RESET
+*
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+  box-sizing: border-box
+
+// COLORSCHEME
+$lightestgrey: #f5f5f5
+$lightgrey: #919191
+$darkgrey: #393939
+
+$cyan: #0ff
+$magenta: #f0f
+$yellow: #ff0
+
+
+.dark-text
+  color: $darkgrey
+
+
+// TYPOGRAPHY
+//fonts
+html, body
+  overflow-x: hidden
+  font-family: 'Open Sans', sans-serif
+  color: $darkgrey
+  letter-spacing: 0.05em
+  line-height: 1.7em
+
+
+
+.title-font
+  font-family: 'Averia Sans Libre', cursive
+.main-font
+  font-family: 'Open Sans', sans-serif
+//sizes
+.jumbo
+  font-size: 60px
+  line-height: 1.1em
+  small
+    font-size: 30px
+.large
+  font-size: 30px
+  small
+    font-size: 16px
+.medium
+  font-size: 16px
+  small
+    font-size: 12px
+.small
+  font-size: 12px
+  letter-spacing: normal
+  line-height: 1.5em
+//weights
+.regular
+  font-weight: normal
+.bold
+  font-weight: bold
+//screen reader
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0,0,0,0)
+  border: 0
+
+h1,h2,h3,h4,h5,h6
+  .subtitle
+    display: block
+
+
+@keyframes translate-to-zero
+  100%
+    opacity: 1
+    transform: translate3d(0,0,0)
+
+
+// HEADER
+.site-header
+  width: 100%
+  position: fixed
+  top: 0
+  height: 171px
+  z-index: 5
+  background-color: #fff
+  border-bottom: 1px solid $lightestgrey
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.02)
+  @media screen and (min-width: 768px)
+    height: 100vh
+    width: 180px
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.02)
+    border-right: 1px solid $lightestgrey
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding-bottom: 150px
+  @media screen and (min-width: 1024px) and (max-width: 1199px)
+    width: 220px
+  @media screen and (min-width: 1200px)
+    width: calc(50% - 390px)
+
+  &.reduced
+    height: 61px
+    .branding-container
+      height: 60px
+      transition: all 300ms ease-in-out
+    .site-title
+      transition: all 200ms ease-in-out
+      transition-delay: 0
+      transform: translateX(500px)
+      opacity: 0
+      pointer-events: none
+    #nav-trigger
+      transform: translate3d(0,-5px,0) scale(0.8)
+      transform-origin: top left
+    .logo
+      transition: transform 300ms ease-in-out
+      transform: translate3d(0,-5px,0) scale(0.36)
+      transform-origin: top right
+
+.branding-container
+  width: 100%
+  height: 170px
+  text-align: right
+  background-color: #fff
+  padding: 15px
+  position: relative
+  z-index: 2
+  line-height: 1.5em
+  //transition: all 300ms ease-in-out
+  @media screen and (min-width: 768px)
+    height: 180px
+    width: 100%
+
+
+.site-title
+  transition: all 200ms ease-in-out
+  transition-delay: 100ms
+  will-change: transform opacity
+.logo
+  transition: transform 300ms ease-in-out
+  width: 165px
+  margin-left: auto
+  will-change: transform
+  @media screen and (min-width: 768px) and (max-width: 1023px)
+    width: 135px
+  @media screen and (min-width: 1024px)
+    width: 165px
+
+
+#nav-trigger
+  width: 50px
+  height: 50px
+  will-change: transform
+  background:
+    image: url(../img/hamburger.svg)
+    size: 80% 80%
+    repeat: no-repeat
+    position: top left
+  position: absolute
+  left: 15px
+  top: 17px
+  cursor: pointer
+  transition: all 200ms ease-in-out
+  z-index: 3
+  &:hover, .colored
+    background:
+      image: url(../img/hamburger-b.svg)
+  @media screen and (min-width: 768px)
+    display: none
+
+#header-nav
+  width: 100%
+  height: 150px
+  background-color: $darkgrey
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+  z-index: 1
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.05)
+  &.hidden
+    transition: all 300ms linear
+    transform: translateY(-195px)
+    pointer-events: none
+  &.showing
+    transition: all 300ms ease-in-out
+    transform: translateY(0)
+  &.hidden, &.showing
+    @media screen and (min-width: 768px)
+      transform: translateY(0)
+      pointer-events: auto
+      transition: none
+
+  .nav-item
+    text-decoration: none
+    text-transform: lowercase
+    height: 50px
+    color: #fff
+    display: inline-block
+    vertical-align: middle
+    padding: 12px 15px 10px 0
+    border-right: 10px solid
+    transition: border-right-width 300ms linear
+    text-align: right
+    width: calc(100% + 1px)
+    margin-right: -1px
+    &:nth-of-type(3)
+      border-color: $cyan
+      &:hover, &:focus, &.active
+        outline: 0
+        border-right-width: 75px
+        transition: border-right-width 500ms cubic-bezier(.15,1.1,.5,1.41)
+    &:nth-of-type(2)
+      border-color: $magenta
+      &:hover, &:focus, &.active
+        outline: 0
+        border-right-width: 95px
+        transition: border-right-width 500ms cubic-bezier(.15,1.1,.5,1.41)
+    &:nth-of-type(1)
+      border-color: $yellow
+      &:hover, &:focus, &.active
+        outline: 0
+        border-right-width: 65px
+        transition: border-right-width 500ms cubic-bezier(.15,1.1,.5,1.41)
+
+
+
+
+// MAIN
+.site-content
+  margin-top: 170px
+  display: flex
+  flex-wrap: wrap
+  background-color: $lightestgrey
+  position: relative
+  z-index: 1
+  transition: margin-top 200ms ease-in-out
+  @media screen and (min-width: 768px)
+    margin-top: 0
+    margin-left: 180px
+  @media screen and (min-width: 1024px) and (max-width: 1199px)
+    margin-left: 220px
+  @media screen and (min-width: 1200px)
+    margin-left: 0
+    width: calc(100% - (50% - 390px))
+    position: absolute
+    right: 0
+    top: 0
+  &.scrolled
+    transition: margin-top 200ms ease-in-out
+    margin-top: 60px
+
+section
+  padding: 15px
+  width: 100%
+  min-height: 100vh
+  padding-top: 40px
+  @media screen and (min-width: 768px)
+    padding-top: 16.5vh
+  .inner
+    width: 100%
+    max-width: 780px
+    padding: 0
+    //margin: 40px 0
+    position: relative
+    min-height: 480px
+    @media screen and (min-width: 768px)
+      //margin-top: 16vh
+      padding: 0 0 0 10px
+
+
+a.anchor
+  display: block
+  position: relative
+  visibility: hidden
+  @media screen and (max-width: 768px)
+    top: -180px
+
+
+
+
+//HERO
+.hero
+  height: 100vh
+  min-height: 768px
+  background:
+    image: url(../img/stock/001.jpg)
+    size: cover
+    position: 70%
+    attachment: fixed
+    repeat: no-repeat
+
+.hero-title
+  width: 100%
+  padding: 0
+  //margin: 40px 0
+  position: relative
+  height: 300px
+  //@media screen and (min-width: 768px)
+    margin-top: 16vh
+  span
+    display: block
+    position: absolute
+
+#your-project
+  width: 100%
+  background-color: transparentize($darkgrey, 0.2)
+  color: #fff
+  height: 132px
+  line-height: 1.1em
+  font-size: 60px
+  z-index: 4
+
+#designed
+  background-color: $yellow
+  width: 85%
+  height: 50px
+  padding-top: 10px
+  padding-left: 28px
+  font-size: 46px
+  top: 140px
+  left: 3%
+  z-index: 4
+
+#developed
+  background-color: $magenta
+  height: 55px
+  width: 57%
+  padding-top: 17px
+  padding-left: 10px
+  font-size: 30px
+  color: #fff
+  top: 180px
+  left: 42%
+  z-index: 2
+
+#and
+  color: #fff
+  padding: 90px 5px 15px
+  background-color: transparentize($darkgrey, 0.2)
+  font-size: 60px
+  top: 132px
+  left: 5%
+  z-index: 2
+
+#tested
+  background-color: $cyan
+  font-size: 40px
+  height: 70px
+  width: 76%
+  top: 225px
+  left: 3%
+  padding: 20px 20px 0 70px
+  z-index: 1
+
+#users
+  color: #fff
+  background-color: transparentize($darkgrey, 0.2)
+  padding: 5px
+  top: 292px
+  width: 100%
+  text-align: right
+  z-index: 0
+  font-size: 24px
+
+#hero-cta-btn
+  will-change: transform
+  width: 100%
+  position: absolute
+  bottom: 10px
+  text-decoration: none
+  text-align: center
+  padding: 10px 20px
+  background-color: #fff
+  color: $darkgrey
+  font-size: 30px
+  font-weight: bold
+  border-radius: 3px
+  box-shadow: 0 2px 3px 2px rgba(0,0,0,0.2)
+  border: 1px solid $cyan
+  &:hover
+    border-color: $lightgrey
+    box-shadow: 0 1px 1px 0px rgba(0,0,0,0.2)
+  @media screen and (min-width: 768px)
+    text-align: left
+    width: calc(100% - 10px)
+
+
+
+
+//SELECTED Work
+
+.work
+  background-color: $yellow
+
+.flex-list
+  display: flex
+  justify-content: space-between
+  list-style: none
+  margin-top: 10px
+  li
+    height: 400px
+    width: 32.5%
+    background-color: #fff
+
+
+
+
+//About
+
+.about
+  background-color: $magenta
+
+
+
+
+
+//CONTACT
+
+.contact
+  background-color: $cyan
+
+
+
+
+//FOOTER
+.site-footer
+  padding: 15px
+  width: 100%
+  background-color: $darkgrey
+  color: white
+  @media screen and (min-width: 768px)
+    margin-left: 0
+    position: fixed
+    text-align: right
+    z-index: 20
+    width: 180px
+    left: 0
+    bottom: 0
+    background-color: transparent
+    color: $darkgrey
+    padding-right: 25px
+  @media screen and (min-width: 1024px) and (max-width: 1199px)
+    width: 220px
+  @media screen and (min-width: 1200px)
+    width: calc(50% - 390px)
