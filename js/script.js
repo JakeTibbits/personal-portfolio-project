@@ -70,7 +70,7 @@ $(document).ready(function(){
     if ( scroll > 1 && ((width <768 && scroll < 590) || (width >= 768 && scroll < 700)) ) {
       $('#your-project').css("transform", "translate3d(" + scroll/9 + "px," + scroll*0.5 + "px,0)");
       $('#designed').css("transform", "translate3d(" + scroll/1.2 + "px," + scroll/2 + "px,0) scale("+((scroll/600)+1)+"");
-      $('#developed').css("transform", "translate3d(-" + scroll*4 + "px," + scroll/4 + "px,0)");
+      $('#developed').css("transform", "translate3d(-" + scroll*4 + "px," + scroll/2 + "px,0)");
       $('#tested').css("transform", "translate3d(" + scroll/3.2 + "px,-" + scroll*1.1 + "px,0)");
       $('#and').css("transform", "translate3d(0px,-" + scroll + "px,0)");
       $('#users').css("transform", "translate3d(-" + scroll*1.5 + "px," + scroll*0.3 + "px,0) scale("+((scroll/400)+1)+")");
