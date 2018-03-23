@@ -340,10 +340,11 @@ section {
 a.anchor {
   display: block;
   position: relative;
-  visibility: hidden; }
-  @media screen and (max-width: 768px) {
+  visibility: hidden;
+  top: -180px; }
+  @media screen and (min-width: 768px) {
     a.anchor {
-      top: -180px; } }
+      top: -16vh; } }
 
 .hero {
   height: 100vh;
