@@ -10,7 +10,7 @@ $(document).ready(function(){
   })
 
 
-  //SMOOTH Scroll
+  //SMOOTH Scroll - copied from https://css-tricks.com/snippets/jquery/smooth-scrolling/
   $('a[href*="#"]')
     // Remove links that don't actually link to anything
     .not('[href="#"]')
@@ -46,6 +46,7 @@ $(document).ready(function(){
         }
       }
     });
+    // / Smooth Scroll
 
 
 
