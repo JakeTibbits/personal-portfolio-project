@@ -177,5 +177,21 @@ $(document).ready(function(){
     $(this)
   });
 
+  $(".grid-list li").on('click touchend keypress', function(){
+    if(!$(this).hasClass('active')){
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+    }
+
+    var data = $(this).attr('data');
+    var infobox = $('#'+data);
+    if(!$(infobox).hasClass('active')){
+      $(infobox).siblings().removeClass('active');
+      $(infobox).siblings().attr('tabindex', '-1');
+      $(infobox).addClass('active');
+      $(infobox).attr('tabindex', '0');
+    }
+  })
+
 
 });

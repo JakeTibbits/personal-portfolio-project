@@ -19,15 +19,15 @@
 
     <div class="branding-container">
       <a href="#top"><img class="logo" src="img/LOGO.svg" alt="Jake Tibbits Design & Development" /></a>
-      <div class="site-title dark main-font medium">design done simply</div>
+      <div class="site-title dark main-font medium">your idea, delivered</div>
     </div>
 
     <button id="nav-trigger" trigger="header-navbar"><span class="sr-only">Open Navigation Menu</span></button>
 
     <nav id="header-nav" class="hidden">
-      <a class="nav-item" href="#work" page-position="1">Work</a>
-      <a class="nav-item" href="#about" page-position="2">About</a>
-      <a class="nav-item" href="#contact" page-position="3">Contact</a>
+      <a class="nav-item medium" href="#work" page-position="1">Work</a>
+      <a class="nav-item medium" href="#about" page-position="2">About</a>
+      <a class="nav-item medium" href="#contact" page-position="3">Contact</a>
     </nav>
 
   </header>
@@ -53,113 +53,127 @@
       <a class="anchor" id="work"></a>
 
       <h2 class="jumbo dark title-font section-title">Selected work</h2>
-      <ul class="flex-list">
-        <li tabindex="0">
+
+      <ul class="grid-list">
+        <li tabindex="0" id="bbd-img" data="bbd-info" class="active">
           <picture class="website-screenshot">
             <source srcset="img/screenshots/desktop/broadband.jpg, img/screenshots/desktop/broadband@2x.jpg 2x" media="(min-width: 1024px)">
             <source srcset="img/screenshots/tablet/broadband.jpg, img/screenshots/tablet/broadband@2x.jpg 2x" media="(min-width: 768px)">
             <img srcset="img/screenshots/mobile/broadband.jpg" srcset="img/screenshots/mobile/broadband@2x.jpg 2x" alt="BroadbandDeals.co.uk screenshot">
           </picture>
-          <div class="website-info">
-            <h3>BroadbandDeals.co.uk</h3>
-            <p>
-              A complex price-comparison tool built with the aim to demistify the broadband market.
-            </p>
-            <p>
-              The site is designed to be simple and explanatory enough for casual users to find the best deals on broadband and switch with confidence.
-            </p>
-            <aside>
-              <h4>Tools used</h4>
-              <ul>
-                <li>
-                  PHP / WordPress
-                </li>
-                <li>
-                  Javascript / AJAX
-                </li>
-                <li>
-                  Google Analytics / Webmaster Tools
-                </li>
-              </ul>
-            </aside>
-            <a href="https://broadbanddeals.co.uk" target="_blank">
-              Go to site &raquo;
-            </a>
-          </div>
         </li>
-        <li tabindex="0">
+        <li tabindex="0" id="saas-img" data="saas-info">
           <picture class="website-screenshot">
             <source srcset="img/screenshots/desktop/vpns.jpg, img/screenshots/desktop/vpns@2x.jpg 2x" media="(min-width: 1024px)">
             <source srcset="img/screenshots/tablet/vpns.jpg, img/screenshots/tablet/vpns@2x.jpg 2x" media="(min-width: 768px)">
             <img srcset="img/screenshots/mobile/vpns.jpg" srcset="img/screenshots/mobile/vpns@2x.jpg 2x" alt="VPNs.co.uk screenshot">
           </picture>
-          <div class="website-info">
-            <h3>VPNs.co.uk, AntiViruses.co.uk & BackUps.co.uk</h3>
+        </li>
+        <li tabindex="0" id="fly-img" data="fly-info">
+          <picture class="website-screenshot">
+            <source srcset="img/screenshots/desktop/flying.jpg, img/screenshots/desktop/flying@2x.jpg 2x" media="(min-width: 1024px)">
+            <source srcset="img/screenshots/tablet/flying.jpg, img/screenshots/tablet/flying@2x.jpg 2x" media="(min-width: 768px)">
+            <img srcset="img/screenshots/mobile/flying.jpg" srcset="img/screenshots/mobile/flying@2x.jpg 2x" alt="FlyingLessons.co.uk screenshot">
+          </picture>
+        </li>
+      </ul>
+
+      <div class="website-info-container">
+
+        <article class="website-info active" id="bbd-info">
+          <h3 class="bold large">BroadbandDeals.co.uk</h3>
+          <div class="website-about">
+            <p>
+              A complex price-comparison tool built with the aim to demystify the UK broadband market.
+            </p>
+            <p>
+              The site is designed to be simple and explanatory enough for casual users to find the best deals on broadband and switch with confidence.
+            </p>
+            <a href="https://broadbanddeals.co.uk" class="bold" target="_blank">
+              Go to site &raquo;
+            </a>
+          </div>
+          <aside class="tools">
+            <h4>Tools used</h4>
+            <ul>
+              <li>
+                PHP / WordPress
+              </li>
+              <li>
+                Javascript / AJAX
+              </li>
+              <li>
+                Google Analytics / Webmaster Tools
+              </li>
+            </ul>
+          </aside>
+        </article>
+
+        <article class="website-info" id="saas-info" tabindex="-1">
+          <h3 class="bold large">VPNs.co.uk, AntiViruses.co.uk & BackUps.co.uk</h3>
+          <div class="website-about">
             <p>
               A simple price-comparison and review page built for affiliate marketing of VPN services.
             </p>
             <p>
               Initially built as a static HTML page and later converted to a WordPress template to easily replicate across other Software-as-as-Service markets.
             </p>
-            <aside>
-              <h4>Tools used</h4>
-              <ul>
-                <li>
-                  HTML / Bootstrap
-                </li>
-                <li>
-                  Javascript / JQuery
-                </li>
-                <li>
-                  PHP / Wordpress
-                </li>
-              </ul>
-            </aside>
-            <a href="https://VPNs.co.uk" target="_blank">
+            <a href="https://VPNs.co.uk" class="bold" target="_blank">
               Go to VPNs.co.uk &raquo;
             </a>
-            <a href="https://BackUps.co.uk" target="_blank">
+            <a href="https://BackUps.co.uk" class="bold" target="_blank">
               Go to BackUps.co.uk &raquo;
             </a>
-            <a href="https://AntiViruses.co.uk" target="_blank">
+            <a href="https://AntiViruses.co.uk" class="bold" target="_blank">
               Go to AntiViruses.co.uk &raquo;
             </a>
           </div>
-        </li>
-        <li tabindex="0">
-          <picture class="website-screenshot">
-            <source srcset="img/screenshots/desktop/flying.jpg, img/screenshots/desktop/flying@2x.jpg 2x" media="(min-width: 1024px)">
-            <source srcset="img/screenshots/tablet/flying.jpg, img/screenshots/tablet/flying@2x.jpg 2x" media="(min-width: 768px)">
-            <img srcset="img/screenshots/mobile/flying.jpg" srcset="img/screenshots/mobile/flying@2x.jpg 2x" alt="FlyingLessons.co.uk screenshot">
-          </picture>
-          <div class="website-info">
-            <h3>FlyingLessons.co.uk</h3>
+          <aside class="tools">
+            <h4>Tools used</h4>
+            <ul>
+              <li>
+                HTML / Bootstrap
+              </li>
+              <li>
+                Javascript / JQuery
+              </li>
+              <li>
+                PHP / Wordpress
+              </li>
+            </ul>
+          </aside>
+        </article>
+
+        <article class="website-info" id="fly-info">
+          <h3 class="bold large">FlyingLessons.co.uk</h3>
+          <div class="website-about">
             <p>
               An e-commerce site promoting and selling aviation experience vouchers.
             </p>
             <p>
               Customized from a generic WordPress e-commerce template. Designed to be quirky and content-rich to reflect the adventurous nature of the products sold.
             </p>
-            <aside>
-              <h4>Tools used</h4>
-              <ul>
-                <li>
-                  PHP / WordPress
-                </li>
-                <li>
-                  Javascript / AJAX
-                </li>
-                <li>
-                  Photoshop / Illustrator
-                </li>
-              </ul>
-            </aside>
-            <a href="https://flyinglessons.co.uk" target="_blank">
+            <a href="https://flyinglessons.co.uk" class="bold" target="_blank">
               Go to site &raquo;
             </a>
           </div>
-        </li>
-      </ul>
+          <aside class="tools">
+            <h4>Tools used</h4>
+            <ul>
+              <li>
+                PHP / WordPress
+              </li>
+              <li>
+                Javascript / AJAX
+              </li>
+              <li>
+                Photoshop / Illustrator
+              </li>
+            </ul>
+          </aside>
+        </article>
+
+      </div>
 
     </section>
 
@@ -167,6 +181,18 @@
       <a class="anchor" id="about"></a>
       <div class="inner">
         <h2 class="jumbo dark title-font section-title">About me</h2>
+        <picture class="headshot">
+          <img src="img/headshot.jpg" srcset="img/headshot@2x.jpg 2x" alt="Jake Tibbits designs and builds websites">
+        </picture>
+        <p>
+          I graduated from Manchester School of Art in 2014, and have since worked on a variety of creative web-based projects.
+        </p>
+        <p>
+          For the past 3 years I have been Creative Director of <a href="https://bonusmedia.co.uk" target="_blank">Bonus Media Ltd</a>, with responsibilty for building a number of successful e-commerce and affiliate marketing sites.
+        </p>
+        <p>
+          My focus as a developer is on creating dynamic tools that make life easier for users.
+        </p>
       </div>
     </section>
 
@@ -174,6 +200,20 @@
       <a class="anchor" id="contact"></a>
       <div class="inner">
         <h2 class="jumbo dark title-font section-title">Get in touch</h2>
+        <p>
+          Do you have a project that needs a creative, user-led approach?
+        </p>
+        <p>
+          Please feel free to get in contact, providing details of your idea, desired timescale and working budget.
+        </p>
+        <address>
+          Email: <a href="mailto:jake@bonusmedia.co.uk?subject=Portfolio Page Contact">Jake @  Bonus Media Ltd</a><br />
+          Tweet: <a href="https://twitter.com/JakeTibbits" target="_blank">@JakeTibbits</a><br />
+          LinkedIn: <a href="https://www.linkedin.com/in/jake-tibbits-2b74b9139/" target="_blank">Jake Tibbits</a>
+        </address>
+        <p>
+          I look forward to working with you!
+        </p>
       </div>
     </section>
 
